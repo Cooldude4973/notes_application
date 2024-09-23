@@ -17,7 +17,7 @@
     <div class="class w-full bg-zinc-900 min-h-screen text-white">
         <div class="form  p-10">
             <form action="/create" method="post">
-                <input type="text"  name="title" class="block w-full bg-zinc-800 rounded-md p-2"
+                <input type="text" name="title" class="block w-full bg-zinc-800 rounded-md p-2"
                     placeholder="Title goes here....">
                 <textarea name="details" class="block mt-2 w-full bg-zinc-800 resize-none  rounded-md p-2"
                     placeholder="Write your task details here...."></textarea>
@@ -25,18 +25,25 @@
             </form>
         </div>
         <div class="tasks p-10 flex gap-3 flex-wrap	">
-            <% if(files.length == 0){ %>
-                 <h3 class="text-zinc-500">no tasks yet.</h3>
+            <% if(files.length==0){ %>
+                <h3 class="text-zinc-500">no tasks yet.</h3>
                 <% } else{ %>
                     <% files.forEach(function(val){ %>
                         <div class="task bg-zinc-800 rounded-md min-w-72 px-3 py-4 ">
-                            <h1 class="title text-2xl tracking-tighter"><%= val %></h1>
+                            <div class="flex justify-between items-center">
+                                <h1 class="title text-2xl tracking-tighter">
+                                    <%= val %>
+                                </h1>
+                                <a href="/edit/<%= val %>" class="text-zinc-600">Edit</a>
+                            </div>
                             <div class="flex w-full justify-between mt-3 ">
-                            <a href="/file/<%= val %>" class="text-blue-500 text-sm  inline-block">Read More.</a>
-                            <a href="/edit/<%= val %>" class="text-zinc-600">Edit</a></div>
+                                <a href="/file/<%= val %>" class="text-blue-500 text-sm  inline-block">Read More.</a>
+                                <a href="/delete/<%= val %>" class="text-red-600">Delete</a>
+                            </div>
+
                         </div>
                         <% })} %>
-                            
+
                             <!-- <div class="task bg-zinc-800 rounded-md w-72 px-3 py-4 hidden">
                                 <h1 class="title text-2xl tracking-tighter">Some title goes here....</h1>
                                 <a href="" class="text-blue-500 text-sm mt-3 inline-block">Read More.</a>
