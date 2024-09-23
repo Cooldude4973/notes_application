@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= fileName %></title>
+    <!-- The below code won't be working because we already have informed that all the static files will be in the public folder so no need to have it in the path -->
+    <!-- <link rel="stylesheet" href="/public/stylesheets/style.css"> -->
+    <!-- This is how you will code it  -->
+    <!-- Only for the ejs pages  -->
+    <link rel="stylesheet" href='/stylesheets/style.css'>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="class w-full bg-zinc-900 min-h-screen text-white p-10">
+        <a href="/" class="text-blue-500 text-xs mb-2 inline-block">Go Back to Home.</a>
+        <div class="taskname text-3xl "><%= fileName %></div>
+        <div class="details mt-2 font-light	mt-5"><%= fileData %></div>
+    </div>
+</body>
+
+</html>

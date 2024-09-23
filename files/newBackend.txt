@@ -1,0 +1,7 @@
+npm i nodemon --save-dev (developer dependencies) nodemon reloads the server whenever any changes are saved , so we manually don't need to restart
+the server
+npm init -y (TO get package.json file)
+The npm init -y command is a shorthand way to quickly generate a package.
+json file with default values, bypassing the interactive prompts that normally occur when you use npm init without the -y flag. 
+
+While implementing scripts 
